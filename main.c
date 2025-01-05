@@ -14,12 +14,13 @@
 
 int	main(int ac, char **av)
 {
-	if (ft_strcmp(av[1], "mandelbrot") == 0 && ac == 2)
-		ft_mandelbrot();
+	if (ac == 2 && ft_strcmp(av[1], "mandelbrot") == 0)
+		ft_putstr_fd("success!\n", 1);
+		// ft_mandelbrot();
 	else
 	{
 	 	ft_putstr_fd("Options:\n", 1);
-		ft_putstr_fd("./fractol mandelbrot\n", 1);
-		ft_putstr_fd("./fractol julia <real> <imaginary>\n", 1);
+		ft_putstr_fd("   ./fractol mandelbrot\n", 1);
+		ft_putstr_fd("   ./fractol julia <value_1> <value_2>\n", 1);
 	}
 }
