@@ -12,15 +12,25 @@
 
 #include "fractol.h"
 
+static void	print_options(void)
+{
+	ft_putstr_fd("Options:\n", 1);
+	ft_putstr_fd("   ./fractol mandelbrot\n", 1);
+	ft_putstr_fd("   ./fractol julia <value_1> <value_2>\n", 1);
+}
+
 int	main(int ac, char **av)
 {
-	if (ac == 2 && ft_strcmp(av[1], "mandelbrot") == 0)
-		ft_putstr_fd("success!\n", 1);
-		// ft_mandelbrot();
-	else
+	t_fractal	fractal;
+
+	if (ac == 2 && ft_strcmp(av[1], "mandelbrot") == 0
+		|| ac == 4 && ft_strcmp(av[1], "julia") == 0)
 	{
-	 	ft_putstr_fd("Options:\n", 1);
-		ft_putstr_fd("   ./fractol mandelbrot\n", 1);
-		ft_putstr_fd("   ./fractol julia <value_1> <value_2>\n", 1);
+		fractal.name = av[1];
+		init_fractal(&fractal);
+		//ft_putstr_fd("success!\n", 1);
+		// ft_mandelbrot();
 	}
+	else
+		print_options();
 }

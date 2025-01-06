@@ -13,8 +13,12 @@
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-// # include <mlx.h>
+# include <mlx.h>
 # include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+
+# define SIZE 1000
 
 typedef struct s_img
 {
@@ -27,6 +31,7 @@ typedef struct s_img
 
 typedef struct s_fractal
 {
+	char	*name;
 	void	*mlx_connection;
 	void	*mlx_window;
 	t_img	img;
@@ -44,5 +49,6 @@ void		ft_putstr_fd(char const *s, int fd);
 void		ft_putchar_fd(char c, int fd);
 t_complex	sum_complex(t_complex z1, t_complex z2);
 t_complex	square_complex(t_complex z);
+void		print_error(char *s);
 
 #endif
