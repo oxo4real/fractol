@@ -14,16 +14,16 @@ double	ft_atodbl(char *s)
 	while ((*s >= '\t' && *s <= '\r') || *s == ' ')
 		s++;
 	while (*s == '+' || *s == '-')
-		if (*s++ == '-')
+		if (*(s++) == '-')
 			sign *= -1;
 	while (*s >= '0' && *s <= '9')
-		int_part = (int_part * 10) + (*s++ - '0');
+		int_part = (int_part * 10) + (*(s++) - '0');
 	if (*s == '.')
 		s++;
 	while (*s >= '0' && *s <= '9')
 	{
 		power /= 10;
-		frac_part = frac_part + (*s++ - '0') * power;
+		frac_part = frac_part + (*(s++) - '0') * power;
 	}
 	return ((int_part + frac_part) * sign);
 }
