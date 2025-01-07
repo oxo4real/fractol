@@ -23,13 +23,13 @@ int	main(int ac, char **av)
 {
 	t_fractal	fractal;
 
-	if (ac == 2 && ft_strcmp(av[1], "mandelbrot") == 0
-		|| ac == 4 && ft_strcmp(av[1], "julia") == 0)
+	if ((ac == 2 && ft_strcmp(av[1], "mandelbrot") == 0)
+		|| (ac == 4 && ft_strcmp(av[1], "julia") == 0))
 	{
 		fractal.name = av[1];
 		init_fractal(&fractal);
-		//ft_putstr_fd("success!\n", 1);
-		// ft_mandelbrot();
+		ft_render(&fractal);
+		mlx_loop(fractal.mlx_connection);
 	}
 	else
 		print_options();
