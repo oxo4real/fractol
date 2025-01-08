@@ -6,7 +6,7 @@
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 09:55:35 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/01/07 20:06:48 by aaghzal          ###   ########.fr       */
+/*   Updated: 2025/01/08 07:56:42 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ static void	compute_pixel(t_fractal *fractal, int x, int y)
 
 	z.r = 0.0;
 	z.i = 0.0;
-	c.r = ft_map(x, -2, +0.5, SIZE) + fractal->shift_x;
-	c.i = ft_map(y, +1.25, -1.25, SIZE) + fractal->shift_y;
+	c.r = (ft_map(x, -2, +0.5, SIZE) * fractal->zoom) + fractal->shift_x;
+	c.i = (ft_map(y, +1.25, -1.25, SIZE) * fractal->zoom) + fractal->shift_y;
 	i = 0;
 	while (i < fractal->definition)
 	{
