@@ -6,11 +6,11 @@
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 20:37:49 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/01/06 20:38:42 by aaghzal          ###   ########.fr       */
+/*   Updated: 2025/01/08 13:00:03 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "fractol_bonus.h"
 
 void	print_error(char *s)
 {

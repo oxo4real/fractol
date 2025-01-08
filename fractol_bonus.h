@@ -17,8 +17,9 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <math.h>
 
-# define SIZE 1300
+# define SIZE 500
 
 typedef struct s_img
 {
@@ -40,6 +41,9 @@ typedef struct s_fractal
 	double	shift_x;
 	double	shift_y;
 	double	zoom;
+	double	julia_r;
+	double	julia_i;
+	double	pow;
 }				t_fractal;
 
 typedef struct s_complex
@@ -48,22 +52,24 @@ typedef struct s_complex
 	double	i;
 }				t_complex;
 
-#define DODGER_BLUE 0x00008B
-#define BRIGHT_YELLOW 0xFFD700
+# define DODGER_BLUE 0x00008B
+# define BRIGHT_YELLOW 0xFFD700
 
 double		ft_atodbl(char *s);
 int			ft_strcmp(const char *s1, const char *s2);
 void		ft_putstr_fd(char const *s, int fd);
 void		ft_putchar_fd(char c, int fd);
 t_complex	sum_complex(t_complex z1, t_complex z2);
-t_complex	square_complex(t_complex z);
 void		print_error(char *s);
 void		init_fractal(t_fractal *fractal);
 void		ft_render(t_fractal *fractal);
-double		ft_map(double unscaled, double new_min, double new_max, double old_max);
+double		ft_map(double unscaled, double new_min,
+				double new_max, double old_max);
 int			close_handler(t_fractal *fractal);
 int			key_handler(int keysym, t_fractal *fractal);
 int			mouse_handler(int button, int x, int y, t_fractal *fractal);
+t_complex	power_complex(t_complex z, int n);
+int			ft_atoi(char *str);
 
 enum {
 	ON_KEYDOWN = 2,

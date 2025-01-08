@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_handler.c                                    :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 20:12:17 by aaghzal           #+#    #+#             */
-/*   Updated: 2025/01/08 12:58:45 by aaghzal          ###   ########.fr       */
+/*   Created: 2024/07/04 13:28:38 by aaghzal           #+#    #+#             */
+/*   Updated: 2024/07/04 15:22:14 by aaghzal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol_bonus.h"
-
-int	close_handler(t_fractal *fractal)
+int	ft_atoi(char *str)
 {
-	mlx_destroy_image(fractal->mlx_connection,
-		fractal->img.img_ptr);
-	mlx_destroy_window(fractal->mlx_connection,
-		fractal->mlx_window);
-	free(fractal->mlx_connection);
-	exit(0);
+	int	neg;
+	int	num;
+	int	i;
+
+	i = 0;
+	neg = 1;
+	num = 0;
+	while (str[i] <= ' ')
+		i++;
+	while (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+		{
+			neg *= -1;
+		}
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num = num * 10 + (str[i] - 48);
+		i++;
+	}
+	return (num * neg);
 }
