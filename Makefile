@@ -6,7 +6,7 @@
 #    By: aaghzal <aaghzal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/08 12:25:59 by aaghzal           #+#    #+#              #
-#    Updated: 2025/01/08 13:24:05 by aaghzal          ###   ########.fr        #
+#    Updated: 2025/01/08 15:03:25 by aaghzal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ $(BUILD_DIR):
  
 $(NAME): $(OBJS) $(OBJSM)
 	$(if $(wildcard $(.BONUS)),@rm -f $(.BONUS) $(OBJSB))
-	$(CC) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $@ $^
+	$(CC) -lmlx -framework OpenGL -framework AppKit -o $@ $^
 
 $(BUILD_DIR)%.o: %.c fractol_bonus.h
 	$(CC) -c $(CFLAGS) -o $@ $<
