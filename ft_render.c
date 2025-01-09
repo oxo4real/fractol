@@ -18,8 +18,8 @@ static void	set_c(t_complex *z, t_complex *c, t_fractal *fractal);
 
 void	ft_render(t_fractal *fractal)
 {
-	int		x;
-	int		y;
+	int	x;
+	int	y;
 
 	y = 0;
 	while (y < SIZE)
@@ -32,10 +32,8 @@ void	ft_render(t_fractal *fractal)
 		}
 		y++;
 	}
-	mlx_put_image_to_window(fractal->mlx_connection,
-		fractal->mlx_window,
-		fractal->img.img_ptr,
-		0, 0);
+	mlx_put_image_to_window(fractal->mlx_connection, fractal->mlx_window,
+		fractal->img.img_ptr, 0, 0);
 }
 
 static void	compute_pixel(t_fractal *fractal, int x, int y)
@@ -64,7 +62,7 @@ static void	compute_pixel(t_fractal *fractal, int x, int y)
 
 static void	ft_put_pixel(int x, int y, t_img *img, int color)
 {
-	int		offset;
+	int	offset;
 
 	offset = (y * img->line_len) + (x * (img->bpp / 8));
 	*(unsigned int *)(img->px_ptr + offset) = color;

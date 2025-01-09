@@ -18,9 +18,9 @@ int	main(int ac, char **av)
 {
 	t_fractal	fractal;
 
-	if ((ac == 2 && ft_strcmp(av[1], "mandelbrot") == 0)
-		|| (ac == 4 && ft_strcmp(av[1], "julia") == 0)
-		|| (ac == 3 && ft_strcmp(av[1], "multibrot") == 0))
+	if ((ac == 2 && ft_strcmp(av[1], "mandelbrot") == 0) || (ac == 4
+			&& ft_strcmp(av[1], "julia") == 0) || (ac == 3 && ft_strcmp(av[1],
+				"multibrot") == 0))
 	{
 		fractal.name = av[1];
 		if (ft_strcmp(av[1], "mandelbrot") == 0)

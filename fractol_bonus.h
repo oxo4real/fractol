@@ -14,9 +14,9 @@
 # define FRACTOL_BONUS_H
 
 # include <mlx.h>
-# include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 # define SIZE 500
 
@@ -27,7 +27,7 @@ typedef struct s_img
 	int		bpp;
 	int		endian;
 	int		line_len;
-}				t_img;
+}			t_img;
 
 typedef struct s_fractal
 {
@@ -43,13 +43,13 @@ typedef struct s_fractal
 	double	julia_r;
 	double	julia_i;
 	double	pow;
-}				t_fractal;
+}			t_fractal;
 
 typedef struct s_complex
 {
 	double	r;
 	double	i;
-}				t_complex;
+}			t_complex;
 
 # define DODGER_BLUE 0x00008B
 # define BRIGHT_YELLOW 0xFFD700
@@ -62,15 +62,16 @@ t_complex	sum_complex(t_complex z1, t_complex z2);
 void		print_error(char *s);
 void		init_fractal(t_fractal *fractal);
 void		ft_render(t_fractal *fractal);
-double		ft_map(double unscaled, double new_min,
-				double new_max, double old_max);
+double		ft_map(double unscaled, double new_min, double new_max,
+				double old_max);
 int			close_handler(t_fractal *fractal);
 int			key_handler(int keysym, t_fractal *fractal);
 int			mouse_handler(int button, int x, int y, t_fractal *fractal);
 t_complex	power_complex(t_complex z, int n);
 int			ft_atoi(char *str);
 
-enum {
+enum
+{
 	ON_KEYDOWN = 2,
 	ON_KEYUP = 3,
 	ON_MOUSEDOWN = 4,
